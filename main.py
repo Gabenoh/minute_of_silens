@@ -27,7 +27,7 @@ else:
             logging.info(f"Програвання файлу: {music_file}")
             pygame.mixer.music.play()
             # Затримка для прослуховування протягом 3 хвилин або до кінця файлу
-            time.sleep(180)
+            time.sleep(121)
             pygame.mixer.music.stop()
             logging.info("Відтворення завершено.")
         except Exception as e:
