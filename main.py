@@ -11,7 +11,7 @@ logging.basicConfig(
 )
 
 # Вкажіть шлях до файлу з музикою
-music_file = "silens.mp3"  # Замініть на фактичний шлях до файлу
+music_file = "/home/galmed/A_minute_of_silence/silens.mp3"
 
 # Перевірка наявності файлу
 if not os.path.exists(music_file):
@@ -20,12 +20,11 @@ else:
     pygame.mixer.init()
     logging.info("Ініціалізація pygame.mixer завершена.")
 
-    # Функція для програвання музики з підвищеною гучністю
+    # Функція для програвання аудіофайлу
     def play_music():
         try:
             pygame.mixer.music.load(music_file)
-            pygame.mixer.music.set_volume(1)  # Встановлюємо гучність на 80%
-            logging.info(f"Програвання файлу: {music_file} з гучністю 100%")
+            logging.info(f"Програвання файлу: {music_file}")
             pygame.mixer.music.play()
             # Затримка для прослуховування протягом 3 хвилин або до кінця файлу
             time.sleep(180)
@@ -34,5 +33,6 @@ else:
         except Exception as e:
             logging.error(f"Помилка під час відтворення: {e}")
 
-    if __name__ == "__main__":
-        play_music()
+
+if __name__ == "__main__":
+    play_music()
