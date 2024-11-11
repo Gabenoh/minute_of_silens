@@ -3,17 +3,17 @@ import time
 import os
 import logging
 
+base_dir = os.path.dirname(os.path.abspath(__file__)) # Шлях до проєкту
 
-path_to_project_file = '/home/galmed/A_minute_of_silence/' # Шлях до проєкту
 # Налаштування логування
 logging.basicConfig(
-    filename=path_to_project_file + "music_player.log",   # Ім'я файлу для збереження логів
+    filename=os.path.join(base_dir, "music_player.log"), # Ім'я файлу для збереження логів
     level=logging.INFO,            # Рівень логування
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
 # Вкажіть шлях до файлу з музикою
-music_file = path_to_project_file + "silens.mp3"
+music_file = os.path.join(base_dir, 'silens.mp3')
 
 # Перевірка наявності файлу
 if not os.path.exists(music_file):
