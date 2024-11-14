@@ -19,7 +19,7 @@ music_file = os.path.join(base_dir, 'silens.mp3')
 if not os.path.exists(music_file):
     logging.error(f"Файл '{music_file}' не знайдено!")
 else:
-    pygame.mixer.init()
+    pygame.mixer.init(frequency=44100, size=-16, channels=2, buffer=512)
     logging.info("Ініціалізація pygame.mixer завершена.")
 
 # Функція для програвання аудіофайлу
